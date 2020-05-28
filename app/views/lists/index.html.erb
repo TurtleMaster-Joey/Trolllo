@@ -1,0 +1,11 @@
+<h1 class="ui header"> <%= @board.name %> List</h1>
+
+
+<%= link_to 'Add List', new_board_list_path(@board) %>
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.title.capitalize, [@board, list] %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", boards_path %>

@@ -1,0 +1,23 @@
+
+<h1 class="ui header">All Boards</h1>
+  <table class="ui striped table">
+    <thead>
+      <tr class="center aligned">
+        <th colspan="4"></th>
+      </tr>
+    </thead> 
+
+<%= link_to "New Board", new_board_path %>
+  <tbody>
+    <% @boards.each do |board|%>
+      <tr class="left aligned">
+        <td><h1><%= board.name %></h1></td>
+
+        <td><%= link_to "View Lists", board_lists_path(board) %></td>
+        <td><%= link_to "Edit", edit_board_path(board) %></td>
+        <td><%= link_to "Delete", board_path(board), method: :delete %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+</table>
